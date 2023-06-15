@@ -3,10 +3,10 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-	<h1>login</h1>
+	<h1>หน้าเข้าสู่ระบบ</h1>
 	<form action="{% url 'login' %}" method="post">
 		{% csrf_token %}
 		{{ form.as_p }}
-		<button type="submit">login</button>
+		<button type="submit">เข้าสู่ระบบ</button>
 	</form>
 {% endblock %}
