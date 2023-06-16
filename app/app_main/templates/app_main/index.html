@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>main</title>
+</head>
+<body>
+	<h1>ชื่อ {{ user.username }}</h1>
+	<a href="{% url 'logout' %}">ออกจากระบบ</a>
+	<h3>ของที่ขาย</h3>
+	<ul>
+		{% for good in goods %}
+			<li>{{ good.title }} {{ good.stock }}</li>
+		{% endfor %}
+	</ul>
+
+	<h3>สินค้าที่ต้องการซื้อ</h3>
+	<form action="{% url 'main_index' %}" method="post">
+		{% csrf_token %}
+		<div>
+			{{ form.wather.label_tag }}
+			{{ form.wather }}
+		</div>
+		<div>
+			{{ form.rice.label_tag }}
+			{{ form.rice }}
+		</div>
+		<div>
+			{{ form.banana.label_tag }}
+			{{ form.banana }}
+		</div>
+		<div>
+			{{ form.bread.label_tag }}
+			{{ form.bread }}
+		</div>
+		<div>
+			{{ form.milk.label_tag }}
+			{{ form.milk }}
+		</div>
+		<button type="submit">ยืนยันการซื้อ</button>
+	</form>
+</body>
+</html>

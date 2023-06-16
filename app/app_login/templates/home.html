@@ -8,7 +8,7 @@
 		<a href="{% url 'main_index' %}">ซื้อของ</a>
 		<a href="{% url 'logout' %}">ออกจากระบบ</a>
 	{% else %}
-		<h1>คูณต้องเข้าสู่ระบบก่อน</h1>
+		<h1>คุณต้องเข้าสู่ระบบก่อน</h1>
 		<a href="{% url 'login' %}">เข้าสู่ระบบ</a>
 	{% endif %}
 {% endblock %}
